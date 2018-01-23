@@ -1,3 +1,0 @@
-# springws
-spring-jaxb-ws
-dsdsdssssssssssssssssssssssssssssssssssssssssssssssss
