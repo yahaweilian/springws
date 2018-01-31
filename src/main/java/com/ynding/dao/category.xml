@@ -6,7 +6,7 @@
     <mapper namespace="com.ynding.dao.CategoryDao">
          
         <select id="get" parameterType="_int" resultType="com.ynding.entity.Category">
-            select * from   category_  where id= #{id}   
+            select * from category_  where id= #{id}   
         </select>
  
     </mapper>

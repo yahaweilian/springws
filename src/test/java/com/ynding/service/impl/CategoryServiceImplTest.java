@@ -10,9 +10,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.ynding.entity.Category;
+import com.ynding.service.CategoryServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:applicationContext.xml"})
+@ContextConfiguration(locations={"file:src/main/resources/applicationContext.xml"})
 @EnableWebMvc
 public class CategoryServiceImplTest {
 

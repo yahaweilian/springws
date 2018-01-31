@@ -14,7 +14,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.ynding" />
+	<context:component-scan base-package="com" />
 	<sws:annotation-driven />
 
 	<!-- 将User类交由jaxb2-marshaller管理，marshaller可将其转换成xml -->
@@ -22,12 +22,23 @@
 		<oxm:class-to-be-bound name="com.ynding.User" />
 	</oxm:jaxb2-marshaller>
 
-	<!-- locationUri默认应设置全路径，http://localhost:8080/userService/， 而这里能够设置相对路径，是因为之前在web.xml中添加的参数transformWsdlLocations为true -->
+	<!-- locationUri默认应设置全路径，http://localhost:8888/userService/， 而这里能够设置相对路径，是因为之前在web.xml中添加的参数transformWsdlLocations为true -->
 	<sws:dynamic-wsdl id="user" portTypeName="UserType"
 		locationUri="/userService/">
 		<sws:xsd location="/WEB-INF/user.xsd" />
 	</sws:dynamic-wsdl>
 
+    <!-- 尽管在运行时从XSDs直接生成WSDL十分便利，采用这种方式会有以下几个问题：
+（1）随着Spring-ws版本升级，根据相同的XSD生成的WSDL有可能会发生变化。
+（2）即便是只生成一次，然后将wsdl缓存起来，但是因为生成过程也会造成请求变慢。
+所以推荐做法是：在development阶段，用dynamic-wsdl来动态生成，当发布应用时，利用浏览器将wsdl download下来，然后再用static-wsdl,这样就可以保证WSDL保持不变  -->
+    <sws:dynamic-wsdl id="holiday" 
+        portTypeName="HumanResource" 
+        locationUri="/holidayService/"
+        targetNamespace="http://ynding.com/hr/definitions">
+        <sws:xsd location="/WEB-INF/hr.xsd"/>
+    </sws:dynamic-wsdl>
+    
 	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
 		<property name="marshaller" ref="jaxbMarshallerBean" />
 		<property name="unmarshaller" ref="jaxbMarshallerBean" />
