@@ -1,15 +1,23 @@
 package com.ynding.ws.client;
 
+import java.io.IOException;
 import java.util.Date;
 
+import javax.xml.transform.Source;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.util.ClassUtils;
 import org.springframework.ws.client.core.WebServiceTemplate;
+import org.springframework.xml.transform.ResourceSource;
+import org.springframework.xml.transform.StringResult;
 
 import com.ynding.entity.EmployeeType;
 import com.ynding.entity.HolidayRequest;
 import com.ynding.entity.HolidayResponse;
 import com.ynding.entity.HolidayType;
+import com.ynding.util.JaxbUtil;
 
 
 public class HolidayClient {
@@ -21,15 +29,15 @@ public class HolidayClient {
 	}
 	
 	// send to the configured default URI
-	/*public void simpleSendAndReceive() throws IOException {
-		Source source = new ResourceSource(new ClassPathResource("com/ynding/ws_soap/client/HolidayRequest.xml"));
+	public void simpleSendAndReceive() throws IOException {
+		Source source = new ResourceSource(new ClassPathResource("com/ynding/ws/client/HolidayRequest.xml"));
 		StringResult result = new StringResult();
 		webServiceTemplate.sendSourceAndReceiveToResult(source, result);
 
 		System.out.println("-------");
 		System.out.println(JaxbUtil.converToJavaBean(result.toString(), HolidayResponse.class));
 		System.out.println("-------");
-	}*/
+	}
 		
 	public void sendAndReceive() throws Exception{
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
@@ -61,5 +69,6 @@ public class HolidayClient {
 		HolidayClient client = new HolidayClient();
 		client.setDefaultUri("http://localhost:8888/springws/services");
 		client.sendAndReceive();
+		client.simpleSendAndReceive();
 	}
 }

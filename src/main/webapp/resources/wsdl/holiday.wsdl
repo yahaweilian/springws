@@ -1,0 +1,67 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://ynding.com/hr/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://ynding.com/hr/definitions" targetNamespace="http://ynding.com/hr/definitions">
+	<wsdl:types>
+		<xs:schema xmlns:hr="http://ynding.com/hr/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified" targetNamespace="http://ynding.com/hr/schemas">
+			<xs:element name="HolidayRequest">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="holiday" type="hr:HolidayType" />
+						<xs:element name="employee" type="hr:EmployeeType" />
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="HolidayResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="name" type="xs:string" />
+						<xs:element name="number" type="xs:integer" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="HolidayType">
+				<xs:sequence>
+					<xs:element name="startDate" type="xs:date" />
+					<xs:element name="endDate" type="xs:date" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="EmployeeType">
+				<xs:sequence>
+					<xs:element name="firstName" type="xs:string" />
+					<xs:element name="lastName" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="HolidayResponse">
+		<wsdl:part element="sch:HolidayResponse" name="HolidayResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="HolidayRequest">
+		<wsdl:part element="sch:HolidayRequest" name="HolidayRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="HumanResource">
+		<wsdl:operation name="Holiday">
+			<wsdl:input message="tns:HolidayRequest" name="HolidayRequest"></wsdl:input>
+			<wsdl:output message="tns:HolidayResponse" name="HolidayResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="HumanResourceSoap11" type="tns:HumanResource">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="Holiday">
+			<soap:operation soapAction="" />
+			<wsdl:input name="HolidayRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="HolidayResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HumanResourceService">
+		<wsdl:port binding="tns:HumanResourceSoap11" name="HumanResourceSoap11">
+			<soap:address location="http://localhost:8888/springws/holidayService/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

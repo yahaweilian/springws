@@ -25,7 +25,7 @@
 	<!-- locationUri默认应设置全路径，http://localhost:8888/userService/， 而这里能够设置相对路径，是因为之前在web.xml中添加的参数transformWsdlLocations为true -->
 	<sws:dynamic-wsdl id="user" portTypeName="UserType"
 		locationUri="/userService/">
-		<sws:xsd location="/WEB-INF/user.xsd" />
+		<sws:xsd location="/resources/xsd/user.xsd" />
 	</sws:dynamic-wsdl>
 
     <!-- 尽管在运行时从XSDs直接生成WSDL十分便利，采用这种方式会有以下几个问题：
@@ -36,7 +36,7 @@
         portTypeName="HumanResource" 
         locationUri="/holidayService/"
         targetNamespace="http://ynding.com/hr/definitions">
-        <sws:xsd location="/WEB-INF/hr.xsd"/>
+        <sws:xsd location="/resources/xsd/hr.xsd"/>
     </sws:dynamic-wsdl>
     
 	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
