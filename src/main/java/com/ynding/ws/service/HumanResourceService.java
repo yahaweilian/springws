@@ -1,4 +1,4 @@
-package com.ynding.service;
+package com.ynding.ws.service;
 
 import com.ynding.entity.HolidayRequest;
 import com.ynding.entity.HolidayResponse;

@@ -1,4 +1,4 @@
-package com.ynding.service.endpoint;
+package com.ynding.ws.endpoint;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,7 +21,7 @@ import org.springframework.xml.xpath.XPathOperations;
 
 import com.ynding.entity.HolidayRequest;
 import com.ynding.entity.HolidayResponse;
-import com.ynding.service.HumanResourceService;
+import com.ynding.ws.service.HumanResourceService;
 
 @Endpoint
 public class HolidayEndpoint {
