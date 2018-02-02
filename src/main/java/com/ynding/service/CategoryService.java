@@ -1,4 +1,4 @@
-package com.ynding.ws.service;
+package com.ynding.service;
 
 import com.ynding.entity.Category;
 
