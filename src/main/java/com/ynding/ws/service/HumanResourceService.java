@@ -1,7 +1,7 @@
 package com.ynding.ws.service;
 
-import com.ynding.entity.HolidayRequest;
-import com.ynding.entity.HolidayResponse;
+import com.ynding.ws.param.HolidayRequest;
+import com.ynding.ws.param.HolidayResponse;
 
 public interface HumanResourceService {
 

@@ -19,8 +19,8 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.springframework.xml.xpath.Jaxp13XPathTemplate;
 import org.springframework.xml.xpath.XPathOperations;
 
-import com.ynding.entity.HolidayRequest;
-import com.ynding.entity.HolidayResponse;
+import com.ynding.ws.param.HolidayRequest;
+import com.ynding.ws.param.HolidayResponse;
 import com.ynding.ws.service.HumanResourceService;
 
 @Endpoint

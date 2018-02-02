@@ -13,11 +13,11 @@ import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.xml.transform.ResourceSource;
 import org.springframework.xml.transform.StringResult;
 
-import com.ynding.entity.EmployeeType;
-import com.ynding.entity.HolidayRequest;
-import com.ynding.entity.HolidayResponse;
-import com.ynding.entity.HolidayType;
 import com.ynding.util.JaxbUtil;
+import com.ynding.ws.param.EmployeeType;
+import com.ynding.ws.param.HolidayRequest;
+import com.ynding.ws.param.HolidayResponse;
+import com.ynding.ws.param.HolidayType;
 
 
 public class HolidayClient {

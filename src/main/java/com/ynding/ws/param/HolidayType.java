@@ -1,4 +1,4 @@
-package com.ynding.entity;
+package com.ynding.ws.param;
 
 import java.util.Date;
 

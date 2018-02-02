@@ -2,8 +2,8 @@ package com.ynding.ws.service;
 
 import org.springframework.stereotype.Service;
 
-import com.ynding.entity.HolidayRequest;
-import com.ynding.entity.HolidayResponse;
+import com.ynding.ws.param.HolidayRequest;
+import com.ynding.ws.param.HolidayResponse;
 
 @Service
 public class HumanResourceServiceImpl implements HumanResourceService {
