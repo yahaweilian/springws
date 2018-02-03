@@ -1,4 +1,4 @@
-package com.ynding.util;
+package com.ynding.jaxb2;
 
 import java.io.StringReader;
 import java.io.StringWriter;

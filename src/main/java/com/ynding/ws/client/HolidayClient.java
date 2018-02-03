@@ -13,7 +13,7 @@ import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.xml.transform.ResourceSource;
 import org.springframework.xml.transform.StringResult;
 
-import com.ynding.util.JaxbUtil;
+import com.ynding.jaxb2.JaxbUtil;
 import com.ynding.ws.param.EmployeeType;
 import com.ynding.ws.param.HolidayRequest;
 import com.ynding.ws.param.HolidayResponse;
