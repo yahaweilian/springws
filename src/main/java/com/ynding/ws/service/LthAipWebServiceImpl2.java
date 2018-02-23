@@ -3,12 +3,12 @@ package com.ynding.ws.service;
 import java.util.Date;
 
 import javax.annotation.Resource;
-import javax.jws.WebService;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
 
 import com.ynding.dao.YcclilbDao;
 import com.ynding.entity.Yccljlb;
@@ -28,9 +28,8 @@ import com.ynding.ws.param2.ServiceXmlPackage;
 import com.ynding.ws.param2.taxML.CLFXXCJRequest;
 import com.ynding.ws.param2.taxML.CLFXXCJResponse;
 
-@Component
-@WebService(serviceName = "LthAipWebService", endpointInterface = "com.ynding.ws.service.LthAipWebService")
-public class LthAipWebServiceImpl implements LthAipWebService {
+@Service
+public class LthAipWebServiceImpl2 implements LthAipWebService2 {
 
 	private static Logger logger = Logger.getLogger(LthAipWebServiceImpl.class);
 	
@@ -52,14 +51,14 @@ public class LthAipWebServiceImpl implements LthAipWebService {
 	 * 02.存量房信息采集提交(完)
 	 */
 	@Override
-	public ServiceXmlPackage clfxxcjtj(ServiceXmlPackage request) {
+	public LthAipResponse clfxxcjtj(LthAipRequest request) {
 		ServiceXmlPackage ret = writeBwrz(request);
 		if (ret != null) {
-			return ret;
+			return (LthAipResponse) ret;
 		}
-		ret = new ServiceXmlPackage();
+		ret = new LthAipResponse();
 		CLFXXCJResponse clfxxcjResponse = new CLFXXCJResponse();
-		CLFXXCJRequest clfxxcjRequest = (CLFXXCJRequest) request.getBody();
+		CLFXXCJRequest clfxxcjRequest =  request.getBody();
 		if (clfxxcjRequest != null) {
 			String bianma = clfxxcjRequest.getHtbh();
 			// 判断合同编号是否已经存在
@@ -69,7 +68,7 @@ public class LthAipWebServiceImpl implements LthAipWebService {
 				ret.getHead().setRtn_msg("该合同编号为" + bianma + "的记录已经保存！");
 				logger.info(request.getHead().getChannel_id() + "在" + DateUtil.formatDate(new Date()) + ":该合同编号为"
 						+ bianma + "的记录的二次保存！");
-				return ret;
+				return  (LthAipResponse) ret;
 			}
 			String str = this.fcxxtjService.clfInfoSave(clfxxcjRequest, request.getHead().getChannel_id());
 			if ("-1".equals(str)) {
@@ -102,7 +101,7 @@ public class LthAipWebServiceImpl implements LthAipWebService {
 			logger.info(request.getHead().getChannel_id() + "在" + DateUtil.formatDate(new Date()) + ":请求体为空！");
 		}
 
-		return ret;
+		return (LthAipResponse) ret;
 	}
 
 	

@@ -106,10 +106,6 @@ public class Head implements Serializable {
 		tran_date = tranDate;
 	}
 
-	
-
-	
-
 	public String getRtn_code() {
 		return rtn_code;
 	}

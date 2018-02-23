@@ -1,18 +1,19 @@
 package com.ynding.service;
 
+import java.lang.reflect.ParameterizedType;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.sql.DataSource;
+
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ynding.config.MultiDataSource;
 import com.ynding.dao.BaseDao;
 import com.ynding.exception.DbOprationException;
-
-import java.lang.reflect.ParameterizedType;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -32,7 +33,7 @@ public abstract class BaseService<E>
 	@Autowired
 	protected SqlSessionFactoryBean sqlSessionFactoryBean;
 	@Autowired
-	protected MultiDataSource mds;
+	protected DataSource mds;
 	
 	protected MapperFactoryBean<E> mapperfb;
 	protected Class<E> mapperInterface ;

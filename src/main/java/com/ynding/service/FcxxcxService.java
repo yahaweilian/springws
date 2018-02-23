@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ynding.dao.NsrDao;
 import com.ynding.dao.TaxHouseDao;
 import com.ynding.entity.Jyztb;
 import com.ynding.entity.Nsr;
@@ -47,6 +48,8 @@ public class FcxxcxService {
 	NsrService nsrService;//获取nsr信息的，然后组装成返回报文（crf和srf）服务
 	@Autowired
 	TaxHouseDao taxHouseDao;
+	@Autowired
+	NsrDao nsrDao;
 	
 	/*public String clfIstall(CLFXXCJRequest clfxxcjrequest, String channelid) {// 存量房返回信息组装
 		return null;
@@ -59,7 +62,7 @@ public class FcxxcxService {
 	        params.put("houseId", zlfxxcjrequest.getJyuuid());//map.put("houseId", clfxqcxRequest.getFwuuid());
 	        TaxHouse house = taxHouseDao.getByHtbh(params);
 	        params.put("fcxx_id",house.getHouseId());//zlfxxcjrequest.getJyuuid()
-	        List<Nsr> nsrlist = nsrService.getList(params);
+	        List<Nsr> nsrlist = nsrDao.getList(params);
 	        Jyztb jyztb = jyztbService.getJyztbList(house.getHouseId(), channelid);
 	        ZLFXXQKCXResponse response = new ZLFXXQKCXResponse();
 	        if (house != null && nsrlist != null && jyztb !=null) {

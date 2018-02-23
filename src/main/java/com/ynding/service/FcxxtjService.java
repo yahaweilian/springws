@@ -13,10 +13,12 @@ import java.util.UUID;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ynding.Enum.Fcjyzt;
+import com.ynding.dao.YjxxDao;
 import com.ynding.entity.Jspz;
 import com.ynding.entity.Jyskb;
 import com.ynding.entity.Jyztb;
@@ -72,6 +74,8 @@ public class FcxxtjService {
 	JspzService jspzService;
 	@Resource
 	YjxxService yjxxService;
+	@Autowired
+	YjxxDao yjxxDao;
 	
 	@Transactional(readOnly = false)
 	public String clfInfoSave(CLFXXCJRequest clfxxcjrequest, String channelid) {// 存量房信息采集方法
@@ -152,7 +156,7 @@ public class FcxxtjService {
 			
 			List<Yjxx> yjxxlist = getJyxxInfo(clfxxcjrequest, fwuuid);
 			if(yjxxlist!=null&&yjxxlist.size()>0){
-				h=this.yjxxService.batchAdd(yjxxlist);
+				h=this.yjxxDao.batchAdd(yjxxlist);
 			}else{
 				h=1;
 			}
@@ -265,7 +269,7 @@ public class FcxxtjService {
 			
 			List<Yjxx> yjxxlist = getJyxxInfo(zlfxxcjrequest, fwuuid);
 			if(yjxxlist!=null&&yjxxlist.size()>0){
-				h=this.yjxxService.batchAdd(yjxxlist);
+				h=this.yjxxDao.batchAdd(yjxxlist);
 			}else{
 				h=1;
 			}
@@ -346,7 +350,7 @@ public class FcxxtjService {
 			
 			List<Yjxx> yjxxlist = getJyxxInfo(zlfxxcjrequest, fwuuid);
 			if(yjxxlist!=null&&yjxxlist.size()>0){
-				h=this.yjxxService.batchAdd(yjxxlist);
+				h=this.yjxxDao.batchAdd(yjxxlist);
 			}else{
 				h=1;
 			}

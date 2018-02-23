@@ -1,0 +1,303 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:hr="http://ynding.com/hr/schemas" elementFormDefault="qualified"
+	       targetNamespace="http://ynding.com/hr/schemas">
+	<xs:element name="LthAipRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="head" type="hr:head" />
+				<xs:element name="body" type="hr:body" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="LthAipResponse">
+	    <xs:complexType>
+			<xs:sequence>
+				<xs:element name="head" type="hr:head" />
+				<xs:element name="body" type="hr:body2" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="body2">
+	    <xs:sequence>
+	        <xs:element name="jyUuid" type="xs:string"></xs:element>
+	        <xs:element name="htbh" type="xs:string"></xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="head">
+	    <xs:sequence>
+	        <xs:element name="tran_id" type="xs:string"></xs:element>
+	        <xs:element name="channel_id" type="xs:string"></xs:element>
+	        <xs:element name="tran_seq" type="xs:string"></xs:element>
+	        <xs:element name="tran_date" type="xs:string"></xs:element>
+	        <xs:element name="rtn_code" type="xs:string"></xs:element>
+	        <xs:element name="rtn_msg" type="xs:string"></xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+	
+	<xs:group name="yjxx">
+	    <xs:sequence>
+	       <xs:element type="xs:string" name="xm">
+	           <xs:annotation>
+	             <xs:documentation>姓名</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="dh">
+	           <xs:annotation>
+	             <xs:documentation>电话</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="dz">
+	           <xs:annotation>
+	             <xs:documentation>地址</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	    </xs:sequence>
+	</xs:group>
+	<xs:group name="srfxx">
+	    <xs:sequence>
+	       <xs:element type="xs:string" name="xm">
+	           <xs:annotation>
+	             <xs:documentation>购买方姓名</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="zjlx">
+	           <xs:annotation>
+	             <xs:documentation>证件类型</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="zjlxmc">
+	           <xs:annotation>
+	             <xs:documentation>证件类型名称</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="zjhm">
+	           <xs:annotation>
+	             <xs:documentation>证件号码</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="dh">
+	           <xs:annotation>
+	             <xs:documentation>电话</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="dz">
+	           <xs:annotation>
+	             <xs:documentation>地址</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="gj">
+	           <xs:annotation>
+	             <xs:documentation>国籍</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="szfe">
+	           <xs:annotation>
+	             <xs:documentation>所占份额 </xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="gyrbj">
+	           <xs:annotation>
+	             <xs:documentation>是否共有人标记</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="jyfe">
+	           <xs:annotation>
+	             <xs:documentation>交易份额 </xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="djxh">
+	           <xs:annotation>
+	             <xs:documentation>登记序号</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="clr">
+	           <xs:annotation>
+	             <xs:documentation>处理人</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="fcbh">
+	           <xs:annotation>
+	             <xs:documentation>房产编号</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="htbh">
+	           <xs:annotation>
+	             <xs:documentation>合同编号</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	       <xs:element type="xs:string" name="jyrlx">
+	           <xs:annotation>
+	             <xs:documentation>交易人类型</xs:documentation>
+	           </xs:annotation>
+	       </xs:element>
+	    </xs:sequence>
+	</xs:group>
+	
+	<xs:group name="srfxxJtcy">
+	   <xs:sequence>
+	      <xs:element type="xs:string" name="xm"></xs:element>
+	      <xs:element type="xs:string" name="zjhm"></xs:element>
+	      <xs:element type="xs:string" name="gx"></xs:element>
+	      <xs:element type="xs:string" name="jzd"></xs:element>
+	      <xs:element type="xs:string" name="bz"></xs:element>
+	   </xs:sequence>
+	</xs:group>
+	
+	<xs:group name="crfxx">
+	   <xs:sequence>
+	      <xs:element type="xs:string" name="xm"></xs:element>
+	      <xs:element type="xs:string" name="zjlx"></xs:element>
+	      <xs:element type="xs:string" name="zjhm"></xs:element>
+	      <xs:element type="xs:string" name="dh"></xs:element>
+	      <xs:element type="xs:string" name="dz"></xs:element>
+	      <xs:element type="xs:string" name="gj"></xs:element>
+	      <xs:element type="xs:string" name="szfe"></xs:element>
+	      <xs:element type="xs:string" name="gyrbj"></xs:element>
+	      <xs:element type="xs:string" name="jyfe"></xs:element>
+	      <xs:element type="xs:string" name="djxh"></xs:element>
+	      <xs:element type="xs:string" name="fcbh"></xs:element>
+	      <xs:element type="xs:string" name="htbh"></xs:element>
+	      <xs:element type="xs:string" name="jyrlx"></xs:element>
+	      <xs:element type="xs:string" name="clr"></xs:element>
+	      <xs:element type="xs:string" name="zjlxmc"></xs:element>
+	   </xs:sequence>
+	</xs:group>
+	
+	<xs:group name="crfxxJtcy">
+	   <xs:sequence>
+	     <xs:element type="xs:string" name="xm"></xs:element>
+	     <xs:element type="xs:string" name="zjhm"></xs:element>
+	     <xs:element type="xs:string" name="gx"></xs:element>
+	     <xs:element type="xs:string" name="jzd"></xs:element>
+	     <xs:element type="xs:string" name="bz"></xs:element>
+	   </xs:sequence>
+	</xs:group>
+	<xs:group name="srfyh">
+	   <xs:sequence>
+	     <xs:element type="xs:string" name="yhdm"></xs:element>
+	   </xs:sequence>
+	</xs:group>
+	<xs:group name="crfyh">
+	   <xs:sequence>
+	     <xs:element type="xs:string" name="yhdm"></xs:element>
+	   </xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="body">
+	    <xs:sequence>
+	        <xs:element name="fcbm" type="xs:string"></xs:element>
+	        <xs:element name="htbh" type="xs:string"></xs:element>
+	        <xs:element name="barq" type="xs:date"></xs:element>
+	        <xs:element name="xzqh" type="xs:string"></xs:element>
+	        <xs:element name="acceptcode" type="xs:string"></xs:element>
+	        <xs:element name="xqmc" type="xs:string"></xs:element>
+	        <xs:element name="fwwzdz" type="xs:string"></xs:element>
+	        <xs:element name="qztzrq" type="xs:date"></xs:element>
+	        <xs:element name="zlc" type="xs:int"></xs:element>
+	        <xs:element name="szlc" type="xs:int"></xs:element>
+	        <xs:element name="jzmj" type="xs:decimal"></xs:element>
+	        <xs:element name="jzjg" type="xs:string"></xs:element>
+	        <xs:element name="jzcxmc" type="xs:string"></xs:element>
+	        <xs:element name="jcnd" type="xs:string"></xs:element>
+	        <xs:element name="fwyt" type="xs:string"></xs:element>
+	        <xs:element name="sbjg" type="xs:decimal"></xs:element>
+	        <xs:element name="qcjyjg" type="xs:decimal"></xs:element>
+	        <xs:element name="qcjyrq" type="xs:date"></xs:element>
+	        <xs:element name="htqdrq" type="xs:date"></xs:element>
+	        <xs:element name="qszydx" type="xs:string"></xs:element>
+	        <xs:element name="qszyyt" type="xs:string"></xs:element>
+	        <xs:element name="qszyfs" type="xs:string"></xs:element>
+	        <xs:element name="fwdh" type="xs:string"></xs:element>
+	        <xs:element name="dy" type="xs:string"></xs:element>
+	        <xs:element name="fjh" type="xs:string"></xs:element>
+	        <xs:element name="tlmj" type="xs:string"></xs:element>
+	        <xs:element name="qcjylx" type="xs:string"></xs:element>
+	        <xs:element name="fssslx" type="xs:string"></xs:element>
+	        <xs:element name="fswmj" type="xs:float"></xs:element>
+	        <xs:element name="fsje" type="xs:decimal"></xs:element>
+	        <xs:element name="dj" type="xs:decimal"></xs:element>
+	        <xs:element name="zjmc" type="xs:string"></xs:element>
+	        <xs:element name="zjId" type="xs:string"></xs:element>
+	        <xs:element name="zxqk" type="xs:string"></xs:element>
+	        <xs:element name="xqdm" type="xs:string"></xs:element>
+	        <xs:element name="htje" type="xs:double"></xs:element>
+	        <xs:element name="fwuuid" type="xs:string"></xs:element>
+	        <xs:element name="cs" type="xs:string"></xs:element>
+	        <xs:element name="zgjg" type="xs:string"></xs:element>
+	        <xs:element name="fzf" type="xs:string"></xs:element>
+	        <xs:element name="leixingfen" type="xs:string"></xs:element>
+	        <xs:element name="swjgbm" type="xs:string"></xs:element>
+	        <xs:element name="srfyjxx" maxOccurs="unbounded">
+	           <xs:complexType>
+	              <xs:group ref="hr:yjxx"></xs:group>
+	           </xs:complexType>
+	        </xs:element>
+	        <xs:element name="crfyjxx" maxOccurs="unbounded">
+	            <xs:complexType>
+	               <xs:group ref="hr:yjxx"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="srfxxlb" maxOccurs="unbounded">
+	            <xs:complexType>
+	               <xs:group ref="hr:srfxx"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="srfxxJtcylb" maxOccurs="unbounded">
+	            <xs:complexType>
+	               <xs:group ref="hr:srfxxJtcy"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="crfxxlb" maxOccurs="unbounded">
+	            <xs:complexType>
+	               <xs:group ref="hr:crfxx"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="crfxxJtcylb" maxOccurs="unbounded">
+	            <xs:complexType>
+	               <xs:group ref="hr:crfxxJtcy"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="srfyhlb" maxOccurs="unbounded">
+	            <xs:complexType>
+	                <xs:group ref="hr:srfyh"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="crfyhlb" maxOccurs="unbounded">
+	            <xs:complexType>
+	                <xs:group ref="hr:crfyh"></xs:group>
+	            </xs:complexType>
+	        </xs:element>
+	        <xs:element name="fctpfjsy" type="hr:fctpfjsy"></xs:element>
+	        <xs:element name="zjgsbm" type="xs:string"></xs:element>
+	        <xs:element name="zjysbh" type="xs:string"></xs:element>
+	        <xs:element name="jdxz" type="xs:string"></xs:element>
+	    </xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="fctpfjsy">
+	   <xs:sequence>
+	      <xs:element type="xs:int" name="fctpzs"></xs:element>
+	      <xs:element type="hr:fctpfjlb" name="fctpfjlb"></xs:element>
+	   </xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fctpfjlb">
+	   <xs:sequence>
+	      <xs:element name="fctpfj" maxOccurs="unbounded">
+	         <xs:complexType>
+	            <xs:group ref="hr:fctpfj"></xs:group>
+	         </xs:complexType>
+	      </xs:element>
+	   </xs:sequence>
+	</xs:complexType>
+	<xs:group name="fctpfj">
+	  <xs:sequence>
+	     <xs:element type="xs:string" name="fcxxid"></xs:element>
+	     <xs:element type="xs:string" name="fctpid"></xs:element>
+	     <xs:element type="xs:string" name="fctplx"></xs:element>
+	     <xs:element type="xs:string" name="fctp"></xs:element>
+	  </xs:sequence>
+	</xs:group>
+</xs:schema>

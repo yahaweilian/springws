@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 import javax.xml.bind.annotation.*;
 
+import org.springframework.ws.server.endpoint.annotation.Namespace;
+
 import com.ynding.ws.param2.TaxDoc;
 
 /**
@@ -19,6 +21,7 @@ import com.ynding.ws.param2.TaxDoc;
  * 
  * 
  */
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CLFXXCJRequest", propOrder = { "fcbm", "htbh", "barq", "xzqh","acceptcode", "xqmc", "fwwzdz", "qztzrq", "zlc",
 		"szlc", "jzmj", "jzjg", "jzcxmc", "jcnd", "fwyt", "sbjg", "qcjyjg", "qcjyrq", "htqdrq", "qszydx", "qszyyt",

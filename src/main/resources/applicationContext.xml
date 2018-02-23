@@ -31,7 +31,7 @@
 		<!-- 加载mybatis的配置文件 -->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
 		<!-- 指定mybatis的xml映射文件位置，或者可以在mybatis-config.xml中mappers元素下配置 -->
-		<!-- <property name="mapperLocations" value="classpath*:mappers/**/*.xml"></property> -->
+		<property name="mapperLocations" value="classpath*:com/ynding/dao/**/*.xml"></property>
 	</bean>
 
 	<!-- mapper批量扫描，从mapper包中扫描出mapper接口，自动创建代理对象并且在spring容器中注册 遵循规范：将mapper.java和mapper.xml映射文件名称保持一致，且在一个目录 

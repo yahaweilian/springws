@@ -14,9 +14,15 @@
             </dataSource>
         </environment>
     </environments> -->
+    <typeAliases>
+      <!--  <typeAlias alias="jspz" type="com.ynding.entity.Jspz"/> -->
+        <package name="com.ynding.entity" />
+    </typeAliases>
     
 	<mappers>
-		  <mapper resource="com/ynding/dao/category.xml" />
+		  <!-- <mapper resource="com/ynding/dao/category.xml" />
+		  <mapper resource="com/ynding/dao/jspz_dao.xml" />  -->
+		  
 	</mappers>
 	
 </configuration>  

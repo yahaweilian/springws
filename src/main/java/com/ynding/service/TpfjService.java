@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ynding.dao.TpfjDao;
@@ -22,39 +22,19 @@ import com.ynding.ws.param2.taxML.Fctpfj;
  * 时间 2017-7-1
  * **/
 @Service("tpfjService")
-public class TpfjService extends BaseService<TpfjDao> {
+public class TpfjService {
 
-	public TpfjService(SqlSessionFactoryBean sqlSessionFactoryBean) {
-		super(sqlSessionFactoryBean);
-		try {
-			initMFB();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	@Autowired
+	TpfjDao tpfjDao;
 
 	public int addTpfjInfo(List<Tpfj> tpfj) {//添加房产信息
-
-		try {
-			return this.batchAdd(tpfj);
-		} catch (DbOprationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return 0;
+		return tpfjDao.batchAdd(tpfj);
 	}
-  public List<Tpfj> getTpfjList(String uuid){
-	  Map<String,Object> params = this.newParamsMap();
+	
+  public List<Tpfj> getTpfjList(String uuid) throws DbOprationException{
+	  Map<String,Object> params = new HashMap<>();
 		params.put("fwxxId",uuid);
-		
-	  try {
-		return this.getList(params);
-	} catch (DbOprationException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	  return null;
+	  return tpfjDao.getList(params);
   } 
   
   /**
@@ -72,7 +52,7 @@ public class TpfjService extends BaseService<TpfjDao> {
 	  Map<String, Object> map = new HashMap<>();
 	  map.put("fctpfjList", list);
 	  try {
-		int i = this.mapperfb.getObject().getCountByFctpid(map);
+		int i = tpfjDao.getCountByFctpid(map);
 		if(i == 0){
 			return 1;
 		}else if(i >0 && list.size() == i){
@@ -87,7 +67,7 @@ public class TpfjService extends BaseService<TpfjDao> {
   }
   public void updateFctpfj(List<Fctpfj> list) {
 		 try {
-			(this.mapperfb.getObject()).updateFctpfj(list);
+			 tpfjDao.updateFctpfj(list);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

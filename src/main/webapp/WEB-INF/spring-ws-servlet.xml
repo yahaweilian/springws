@@ -22,7 +22,7 @@
 		<oxm:class-to-be-bound name="com.ynding.User" />
 	</oxm:jaxb2-marshaller>
 
-	<!-- locationUri默认应设置全路径，http://localhost:8888/userService/， 而这里能够设置相对路径，是因为之前在web.xml中添加的参数transformWsdlLocations为true -->
+	<!-- locationUri默认应设置全路径，http://localhost:8888/springws/userService/， 而这里能够设置相对路径，是因为之前在web.xml中添加的参数transformWsdlLocations为true -->
 	<sws:dynamic-wsdl id="user" portTypeName="UserType"
 		locationUri="/userService/">
 		<sws:xsd location="/resources/xsd/user.xsd" />
@@ -37,6 +37,12 @@
         locationUri="/holidayService/"
         targetNamespace="http://ynding.com/hr/definitions">
         <sws:xsd location="/resources/xsd/hr.xsd"/>
+    </sws:dynamic-wsdl>
+    
+    <sws:dynamic-wsdl id="clfcj" 
+        portTypeName="LthAipWeb" 
+        locationUri="/clfcjService/">
+        <sws:xsd location="/resources/xsd/clfcj.xsd"/>
     </sws:dynamic-wsdl>
     
 	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
