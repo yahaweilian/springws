@@ -1,0 +1,359 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:tns="http://service.ws.ynding.com/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="LthAipWebService" 
+targetNamespace="http://service.ws.ynding.com/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ynding.com/hr/schemas" elementFormDefault="qualified" targetNamespace="http://ynding.com/hr/schemas" version="1.0">
+<xs:element name="serviceXmlPackage" type="tns:serviceXmlPackage"/>
+<xs:complexType name="serviceXmlPackage">
+<xs:sequence>
+<xs:element minOccurs="0" name="head" type="tns:head"/>
+<xs:element minOccurs="0" name="body" type="tns:body"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="head">
+<xs:sequence>
+<xs:element minOccurs="0" name="tran_id" type="xs:string"/>
+<xs:element minOccurs="0" name="channel_id" type="xs:string"/>
+<xs:element minOccurs="0" name="tran_seq" type="xs:string"/>
+<xs:element minOccurs="0" name="tran_date" type="xs:string"/>
+<xs:element minOccurs="0" name="rtn_code" type="xs:string"/>
+<xs:element minOccurs="0" name="rtn_msg" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="body">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.ws.ynding.com/" xmlns:ns1="http://ynding.com/hr/schemas" elementFormDefault="unqualified" targetNamespace="http://service.ws.ynding.com/" version="1.0">
+<xs:import namespace="http://ynding.com/hr/schemas"/>
+<xs:element name="clfxxcjtj" type="tns:clfxxcjtj"/>
+<xs:element name="clfxxcjtjResponse" type="tns:clfxxcjtjResponse"/>
+<xs:complexType name="clfxxcjtj">
+<xs:sequence>
+<xs:element minOccurs="0" name="request" type="ns1:serviceXmlPackage"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="CLFXXCJRequest">
+<xs:complexContent>
+<xs:extension base="ns1:body">
+<xs:sequence>
+<xs:element name="fcbm" type="xs:string"/>
+<xs:element name="htbh" type="xs:string"/>
+<xs:element name="barq" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="xzqh" type="xs:string"/>
+<xs:element minOccurs="0" name="acceptcode" type="xs:string"/>
+<xs:element minOccurs="0" name="xqmc" type="xs:string"/>
+<xs:element name="fwwzdz" type="xs:string"/>
+<xs:element name="qztzrq" type="xs:dateTime"/>
+<xs:element name="zlc" type="xs:int"/>
+<xs:element name="szlc" type="xs:int"/>
+<xs:element name="jzmj" type="xs:decimal"/>
+<xs:element name="jzjg" type="xs:string"/>
+<xs:element minOccurs="0" name="jzcxmc" type="xs:string"/>
+<xs:element minOccurs="0" name="jcnd" type="xs:string"/>
+<xs:element name="fwyt" type="xs:string"/>
+<xs:element name="sbjg" type="xs:decimal"/>
+<xs:element name="qcjyjg" type="xs:decimal"/>
+<xs:element name="qcjyrq" type="xs:dateTime"/>
+<xs:element name="htqdrq" type="xs:dateTime"/>
+<xs:element name="qszydx" type="xs:string"/>
+<xs:element name="qszyyt" type="xs:string"/>
+<xs:element name="qszyfs" type="xs:string"/>
+<xs:element name="fwdh" type="xs:string"/>
+<xs:element name="dy" type="xs:string"/>
+<xs:element name="fjh" type="xs:string"/>
+<xs:element name="tlmj" type="xs:string"/>
+<xs:element name="qcjylx" type="xs:string"/>
+<xs:element name="fssslx" type="xs:string"/>
+<xs:element name="fswmj" type="xs:float"/>
+<xs:element minOccurs="0" name="fsje" type="xs:decimal"/>
+<xs:element name="dj" type="xs:decimal"/>
+<xs:element minOccurs="0" name="zjmc" type="xs:string"/>
+<xs:element minOccurs="0" name="zjId" type="xs:string"/>
+<xs:element minOccurs="0" name="zxqk" type="xs:string"/>
+<xs:element minOccurs="0" name="xqdm" type="xs:string"/>
+<xs:element name="htje" type="xs:double"/>
+<xs:element minOccurs="0" name="fwuuid" type="xs:string"/>
+<xs:element minOccurs="0" name="cs" type="xs:string"/>
+<xs:element minOccurs="0" name="zgjg" type="xs:string"/>
+<xs:element minOccurs="0" name="fzf" type="xs:string"/>
+<xs:element minOccurs="0" name="leixingfen" type="xs:string"/>
+<xs:element minOccurs="0" name="swjgbm" type="xs:string"/>
+<xs:element minOccurs="0" name="srfyjxx">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="yjxx" type="tns:Yjxx"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="crfyjxx">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="yjxx" type="tns:Yjxx"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="srfxxlb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="srfxx" type="tns:Srfxx"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="srfxxJtcylb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="srfxxJtcy" type="tns:srfxxJtcy"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="crfxxlb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="crfxx" type="tns:Crfxx"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="crfxxJtcylb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="crfxxJtcy" type="tns:crfxxJtcy"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="srfyhlb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="srfyh" type="tns:srfyh"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="crfyhlb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="crfyh" type="tns:crfyh"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element minOccurs="0" name="fctpfjsy" type="tns:fctpfjsy"/>
+<xs:element minOccurs="0" name="zjgsbm" type="xs:string"/>
+<xs:element minOccurs="0" name="zjysbh" type="xs:string"/>
+<xs:element minOccurs="0" name="jdxz" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="Yjxx">
+<xs:sequence>
+<xs:element minOccurs="0" name="xm" type="xs:string"/>
+<xs:element minOccurs="0" name="dh" type="xs:string"/>
+<xs:element minOccurs="0" name="dz" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Srfxx">
+<xs:sequence>
+<xs:element name="xm" type="xs:string"/>
+<xs:element name="zjlx" type="xs:string"/>
+<xs:element minOccurs="0" name="zjlxmc" type="xs:string"/>
+<xs:element name="zjhm" type="xs:string"/>
+<xs:element name="dh" type="xs:string"/>
+<xs:element name="dz" type="xs:string"/>
+<xs:element name="gj" type="xs:string"/>
+<xs:element name="szfe" type="xs:string"/>
+<xs:element name="gyrbj" type="xs:string"/>
+<xs:element minOccurs="0" name="jyfe" type="xs:string"/>
+<xs:element minOccurs="0" name="djxh" type="xs:string"/>
+<xs:element minOccurs="0" name="clr" type="xs:string"/>
+<xs:element minOccurs="0" name="fcbh" type="xs:string"/>
+<xs:element minOccurs="0" name="htbh" type="xs:string"/>
+<xs:element minOccurs="0" name="jyrlx" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="srfxxJtcy">
+<xs:sequence>
+<xs:element name="xm" type="xs:string"/>
+<xs:element name="zjhm" type="xs:string"/>
+<xs:element name="gx" type="xs:string"/>
+<xs:element minOccurs="0" name="jzd" type="xs:string"/>
+<xs:element minOccurs="0" name="bz" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Crfxx">
+<xs:sequence>
+<xs:element name="xm" type="xs:string"/>
+<xs:element name="zjlx" type="xs:string"/>
+<xs:element name="zjhm" type="xs:string"/>
+<xs:element name="dh" type="xs:string"/>
+<xs:element name="dz" type="xs:string"/>
+<xs:element name="gj" type="xs:string"/>
+<xs:element name="szfe" type="xs:string"/>
+<xs:element name="gyrbj" type="xs:string"/>
+<xs:element minOccurs="0" name="jyfe" type="xs:string"/>
+<xs:element minOccurs="0" name="djxh" type="xs:string"/>
+<xs:element minOccurs="0" name="fcbh" type="xs:string"/>
+<xs:element minOccurs="0" name="htbh" type="xs:string"/>
+<xs:element minOccurs="0" name="jyrlx" type="xs:string"/>
+<xs:element minOccurs="0" name="clr" type="xs:string"/>
+<xs:element minOccurs="0" name="zjlxmc" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="crfxxJtcy">
+<xs:sequence>
+<xs:element name="xm" type="xs:string"/>
+<xs:element name="zjhm" type="xs:string"/>
+<xs:element name="gx" type="xs:string"/>
+<xs:element minOccurs="0" name="jzd" type="xs:string"/>
+<xs:element minOccurs="0" name="bz" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="srfyh">
+<xs:sequence>
+<xs:element name="yhdm" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="crfyh">
+<xs:sequence>
+<xs:element name="yhdm" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="fctpfjsy">
+<xs:sequence>
+<xs:element name="fctpzs" type="xs:int"/>
+<xs:element name="fctpfjlb" type="tns:fctpfjlb"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="fctpfjlb">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="fctpfj" nillable="true" type="tns:Fctpfj"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Fctpfj">
+<xs:sequence>
+<xs:element name="fcxxid" type="xs:string"/>
+<xs:element name="fctpid" type="xs:string"/>
+<xs:element name="fctplx" type="xs:string"/>
+<xs:element minOccurs="0" name="fctp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="CLFXXCJResponse">
+<xs:complexContent>
+<xs:extension base="ns1:body">
+<xs:sequence>
+<xs:element minOccurs="0" name="jyUuid" type="xs:string"/>
+<xs:element minOccurs="0" name="htbh" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="CLFXQCXRequest">
+<xs:complexContent>
+<xs:extension base="ns1:body">
+<xs:sequence>
+<xs:element minOccurs="0" name="fwuuid" type="xs:string"/>
+<xs:element minOccurs="0" name="htbh" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FWXXCXLBResponse">
+<xs:complexContent>
+<xs:extension base="ns1:body">
+<xs:sequence>
+<xs:element name="zys" type="xs:int"/>
+<xs:element name="dqy" type="xs:int"/>
+<xs:element name="mysl" type="xs:int"/>
+<xs:element minOccurs="0" name="Fwxxlb">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="fwxx" type="tns:Fwxx"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="Fwxx">
+<xs:sequence>
+<xs:element minOccurs="0" name="fwuuid" type="xs:string"/>
+<xs:element minOccurs="0" name="htbh" type="xs:string"/>
+<xs:element minOccurs="0" name="fwwzdz" type="xs:string"/>
+<xs:element minOccurs="0" name="crfxm" type="xs:string"/>
+<xs:element minOccurs="0" name="crfzjhm" type="xs:string"/>
+<xs:element minOccurs="0" name="srfxm" type="xs:string"/>
+<xs:element minOccurs="0" name="srfzjhm" type="xs:string"/>
+<xs:element minOccurs="0" name="zt" type="xs:string"/>
+<xs:element minOccurs="0" name="ztmc" type="xs:string"/>
+<xs:element minOccurs="0" name="shyj" type="xs:string"/>
+<xs:element minOccurs="0" name="clfzlfbz" type="xs:string"/>
+<xs:element minOccurs="0" name="clrzjhm" type="xs:string"/>
+<xs:element minOccurs="0" name="crfpzxh" type="xs:string"/>
+<xs:element minOccurs="0" name="srfpzxh" type="xs:string"/>
+<xs:element minOccurs="0" name="fybm" type="xs:string"/>
+<xs:element minOccurs="0" name="xzqh" type="xs:string"/>
+<xs:element minOccurs="0" name="fpkpbj" type="xs:string"/>
+<xs:element minOccurs="0" name="spkpbj" type="xs:string"/>
+<xs:element minOccurs="0" name="crfdjxh" type="xs:string"/>
+<xs:element minOccurs="0" name="srfdjxh" type="xs:string"/>
+<xs:element minOccurs="0" name="sl" type="xs:string"/>
+<xs:element minOccurs="0" name="se" type="xs:string"/>
+<xs:element name="htjg" type="xs:double"/>
+<xs:element name="pgjg" type="xs:double"/>
+<xs:element name="mj" type="xs:double"/>
+<xs:element name="dj" type="xs:double"/>
+<xs:element minOccurs="0" name="cqzh" type="xs:string"/>
+<xs:element minOccurs="0" name="fczh" type="xs:string"/>
+<xs:element minOccurs="0" name="Crfdh" type="xs:string"/>
+<xs:element minOccurs="0" name="Srfdh" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ZLFXXQKCXRequest">
+<xs:complexContent>
+<xs:extension base="ns1:body">
+<xs:sequence>
+<xs:element name="jyuuid" type="xs:string"/>
+<xs:element name="cshdjzh" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="clfxxcjtjResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="result" type="ns1:serviceXmlPackage"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="clfxxcjtj">
+<wsdl:part element="tns:clfxxcjtj" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="clfxxcjtjResponse">
+<wsdl:part element="tns:clfxxcjtjResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="LthAipWebService">
+<wsdl:operation name="clfxxcjtj">
+<wsdl:input message="tns:clfxxcjtj" name="clfxxcjtj"></wsdl:input>
+<wsdl:output message="tns:clfxxcjtjResponse" name="clfxxcjtjResponse"></wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="LthAipWebServiceSoapBinding" type="tns:LthAipWebService">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="clfxxcjtj">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="clfxxcjtj">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="clfxxcjtjResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="LthAipWebService">
+<wsdl:port binding="tns:LthAipWebServiceSoapBinding" name="LthAipWebServiceImplPort">
+<soap:address location="http://localhost:8888/springws/LthAipWebService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

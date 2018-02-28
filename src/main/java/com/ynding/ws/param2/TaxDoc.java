@@ -28,8 +28,8 @@ import com.ynding.ws.param2.taxML.ZLFXXQKCXRequest;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "body")
-//@XmlSeeAlso({CLFXXCJRequest.class, CLFXXCJResponse.class,
-//       CLFXQCXRequest.class,FWXXCXLBResponse.class,ZLFXXQKCXRequest.class})
+@XmlSeeAlso({CLFXXCJRequest.class, CLFXXCJResponse.class,
+       CLFXQCXRequest.class,FWXXCXLBResponse.class,ZLFXXQKCXRequest.class})
 public class TaxDoc implements Serializable {
 
     private static final long serialVersionUID = -1894542323339348315L;

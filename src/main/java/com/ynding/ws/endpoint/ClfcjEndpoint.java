@@ -9,7 +9,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import com.ynding.ws.param2.ServiceXmlPackage;
 import com.ynding.ws.service.LthAipWebService;
 
-//@Endpoint
+@Endpoint
 public class ClfcjEndpoint {
 
 	private static final String NAMESPACE_URI = "http://ynding.com/hr/schemas";

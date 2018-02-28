@@ -1,7 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:hr="http://ynding.com/hr/schemas" elementFormDefault="qualified"
 	       targetNamespace="http://ynding.com/hr/schemas">
-	<xs:element name="serviceXmlPackage">
+	<xs:element name="LthAipRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="head" type="hr:head" />
@@ -9,6 +9,22 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	
+	<xs:element name="LthAipResponse">
+	    <xs:complexType>
+			<xs:sequence>
+				<xs:element name="head" type="hr:head" />
+				<xs:element name="body" type="hr:body2" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="body2">
+	    <xs:sequence>
+	        <xs:element name="jyUuid" type="xs:string"></xs:element>
+	        <xs:element name="htbh" type="xs:string"></xs:element>
+	    </xs:sequence>
+	</xs:complexType>
 	
 	<xs:complexType name="head">
 	    <xs:sequence>

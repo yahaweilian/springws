@@ -39,11 +39,13 @@
         <sws:xsd location="/resources/xsd/hr.xsd"/>
     </sws:dynamic-wsdl>
     
-    <sws:dynamic-wsdl id="clfcj" 
+    <!-- <sws:dynamic-wsdl id="clfcj2" 
         portTypeName="LthAipWeb" 
         locationUri="/clfcjService/">
         <sws:xsd location="/resources/xsd/clfcj.xsd"/>
-    </sws:dynamic-wsdl>
+    </sws:dynamic-wsdl> -->
+    
+    <sws:static-wsdl id="clfcj" location="/resources/wsdl/clfcj.wsdl"/>
     
 	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
 		<property name="marshaller" ref="jaxbMarshallerBean" />

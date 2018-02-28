@@ -12,7 +12,7 @@ import com.ynding.ws.param2.ServiceXmlPackage;
 import com.ynding.ws.service.LthAipWebService;
 import com.ynding.ws.service.LthAipWebService2;
 
-@Endpoint
+//@Endpoint
 public class ClfcjEndpoint2 {
 
 	private static final String NAMESPACE_URI = "http://ynding.com/hr/schemas";

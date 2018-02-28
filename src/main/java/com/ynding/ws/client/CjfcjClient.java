@@ -42,7 +42,6 @@ public class CjfcjClient {
 		
 		ServiceXmlPackage request = new ServiceXmlPackage();
 		
-		
 		msbServiceTemplate.setDefaultUri("http://localhost:8888/springws/services");
 		
 		ServiceXmlPackage response = (ServiceXmlPackage) msbServiceTemplate.marshalSendAndReceive(request);

@@ -1,4 +1,5 @@
-<LthAipRequest xmlns="http://ynding.com/hr/schemas">
+<serviceXmlPackage xmlns="http://ynding.com/hr/schemas" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<head>
 			<tran_id>2222</tran_id>
 			<channel_id>11121111</channel_id>
@@ -131,4 +132,4 @@
 				</crfyh>
 			</crfyhlb>
 		</body>
-</LthAipRequest>
+</serviceXmlPackage>
